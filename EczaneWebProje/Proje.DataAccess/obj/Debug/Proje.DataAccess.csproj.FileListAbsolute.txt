@@ -1,0 +1,6 @@
+D:\Project\EczaneWebProje\Proje.DataAccess\bin\Debug\Proje.DataAccess.dll
+D:\Project\EczaneWebProje\Proje.DataAccess\bin\Debug\Proje.DataAccess.pdb
+D:\Project\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.csprojAssemblyReference.cache
+D:\Project\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.csproj.CoreCompileInputs.cache
+D:\Project\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.dll
+D:\Project\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.pdb
