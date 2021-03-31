@@ -4,3 +4,9 @@ D:\Project\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.csprojAsse
 D:\Project\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.csproj.CoreCompileInputs.cache
 D:\Project\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.dll
 D:\Project\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.pdb
+D:\EczaneWeb\EczaneWebProje\Proje.DataAccess\bin\Debug\Proje.DataAccess.dll
+D:\EczaneWeb\EczaneWebProje\Proje.DataAccess\bin\Debug\Proje.DataAccess.pdb
+D:\EczaneWeb\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.csprojAssemblyReference.cache
+D:\EczaneWeb\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.csproj.CoreCompileInputs.cache
+D:\EczaneWeb\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.dll
+D:\EczaneWeb\EczaneWebProje\Proje.DataAccess\obj\Debug\Proje.DataAccess.pdb

@@ -4,3 +4,9 @@ D:\Project\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.csprojAssembly
 D:\Project\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.csproj.CoreCompileInputs.cache
 D:\Project\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.dll
 D:\Project\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.pdb
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\Proje.Business.dll
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\Proje.Business.pdb
+D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.csprojAssemblyReference.cache
+D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.csproj.CoreCompileInputs.cache
+D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.dll
+D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.pdb
