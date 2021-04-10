@@ -67,7 +67,7 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="wel-nots">
-						<p>Welcome to Our Health Lab!</p>
+						<p>Welcome to Halil Gulez Eczane Takip Programı!</p>
 					</div>
 					<div class="right-top">
 						<ul>
