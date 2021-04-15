@@ -122,3 +122,9 @@ D:\EczaneWeb\EczaneWebProje\WebEczane\obj\Debug\WebEczane.csproj.CoreCompileInpu
 D:\EczaneWeb\EczaneWebProje\WebEczane\obj\Debug\WebEczane.csproj.CopyComplete
 D:\EczaneWeb\EczaneWebProje\WebEczane\obj\Debug\WebEczane.dll
 D:\EczaneWeb\EczaneWebProje\WebEczane\obj\Debug\WebEczane.pdb
+D:\EczaneWeb\EczaneWebProje\WebEczane\bin\EntityFramework.dll
+D:\EczaneWeb\EczaneWebProje\WebEczane\bin\EntityFramework.SqlServer.dll
+D:\EczaneWeb\EczaneWebProje\WebEczane\bin\Proje.Business.dll.config
+D:\EczaneWeb\EczaneWebProje\WebEczane\bin\Proje.DataAccess.dll.config
+D:\EczaneWeb\EczaneWebProje\WebEczane\bin\EntityFramework.xml
+D:\EczaneWeb\EczaneWebProje\WebEczane\bin\EntityFramework.SqlServer.xml

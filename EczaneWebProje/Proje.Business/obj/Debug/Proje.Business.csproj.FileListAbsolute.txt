@@ -10,3 +10,9 @@ D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.csprojAssemb
 D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.csproj.CoreCompileInputs.cache
 D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.dll
 D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.pdb
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\Proje.Business.dll.config
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\EntityFramework.dll
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\EntityFramework.xml
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.csproj.CopyComplete

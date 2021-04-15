@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc101ee1bd034d7db3caf6f7496f64c2" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="WebProgramlamaModel.hasta" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebProgramlamaModel.siparis" Width="1.5" PointX="6.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebProgramlamaModel.urun" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="WebProgramlamaModel.FK_siparis_hasta" ManuallyRouted="false" />
+        <AssociationConnector Association="WebProgramlamaModel.FK_urun_hasta" ManuallyRouted="false" />
+        <AssociationConnector Association="WebProgramlamaModel.FK_siparis_urun" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
