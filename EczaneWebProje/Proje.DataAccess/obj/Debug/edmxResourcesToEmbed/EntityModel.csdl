@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebProgramlamaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="hasta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hastaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hastaKimlikno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hastaAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hastaSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_hasta" FromRole="hasta" ToRole="siparis" />
+    <NavigationProperty Name="urun" Relationship="Self.FK_urun_hasta" FromRole="hasta" ToRole="urun" />
+  </EntityType>
+  <EntityType Name="siparis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="siparisNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="siparisTarihi" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="toplamTutar" Type="Double" Nullable="false" />
+    <Property Name="hastaid" Type="Int32" Nullable="false" />
+    <Property Name="urunid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="hasta" Relationship="Self.FK_siparis_hasta" FromRole="siparis" ToRole="hasta" />
+    <NavigationProperty Name="urun" Relationship="Self.FK_siparis_urun" FromRole="siparis" ToRole="urun" />
+  </EntityType>
+  <EntityType Name="urun">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="urunadi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stokMiktari" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="birimFiyat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hastaid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="hasta" Relationship="Self.FK_urun_hasta" FromRole="urun" ToRole="hasta" />
+    <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_urun" FromRole="urun" ToRole="siparis" />
+  </EntityType>
+  <Association Name="FK_siparis_hasta">
+    <End Role="hasta" Type="Self.hasta" Multiplicity="1" />
+    <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hasta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="siparis">
+        <PropertyRef Name="hastaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_urun_hasta">
+    <End Role="hasta" Type="Self.hasta" Multiplicity="1" />
+    <End Role="urun" Type="Self.urun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hasta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="urun">
+        <PropertyRef Name="hastaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_siparis_urun">
+    <End Role="urun" Type="Self.urun" Multiplicity="1" />
+    <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="urun">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="siparis">
+        <PropertyRef Name="urunid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebProgramlamaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="hasta" EntityType="Self.hasta" />
+    <EntitySet Name="siparis" EntityType="Self.siparis" />
+    <EntitySet Name="urun" EntityType="Self.urun" />
+    <AssociationSet Name="FK_siparis_hasta" Association="Self.FK_siparis_hasta">
+      <End Role="hasta" EntitySet="hasta" />
+      <End Role="siparis" EntitySet="siparis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_urun_hasta" Association="Self.FK_urun_hasta">
+      <End Role="hasta" EntitySet="hasta" />
+      <End Role="urun" EntitySet="urun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_siparis_urun" Association="Self.FK_siparis_urun">
+      <End Role="urun" EntitySet="urun" />
+      <End Role="siparis" EntitySet="siparis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

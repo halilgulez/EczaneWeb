@@ -16,3 +16,6 @@ D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\EntityFramework.SqlServer.d
 D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\EntityFramework.xml
 D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\EntityFramework.SqlServer.xml
 D:\EczaneWeb\EczaneWebProje\Proje.Business\obj\Debug\Proje.Business.csproj.CopyComplete
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\Proje.DataAccess.dll
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\Proje.DataAccess.pdb
+D:\EczaneWeb\EczaneWebProje\Proje.Business\bin\Debug\Proje.DataAccess.dll.config

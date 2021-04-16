@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebProgramlamaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="hasta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hastaNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="hastaKimlikno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="hastaAd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="hastaSoyad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="siparis">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="siparisNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="siparisTarihi" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="toplamTutar" Type="float" Nullable="false" />
+    <Property Name="hastaid" Type="int" Nullable="false" />
+    <Property Name="urunid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="urun">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunKodu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="urunadi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="stokMiktari" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="birimFiyat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="hastaid" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_siparis_hasta">
+    <End Role="hasta" Type="Self.hasta" Multiplicity="1" />
+    <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hasta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="siparis">
+        <PropertyRef Name="hastaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_siparis_urun">
+    <End Role="urun" Type="Self.urun" Multiplicity="1" />
+    <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="urun">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="siparis">
+        <PropertyRef Name="urunid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_urun_hasta">
+    <End Role="hasta" Type="Self.hasta" Multiplicity="1" />
+    <End Role="urun" Type="Self.urun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hasta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="urun">
+        <PropertyRef Name="hastaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebProgramlamaModelStoreContainer">
+    <EntitySet Name="hasta" EntityType="Self.hasta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="siparis" EntityType="Self.siparis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="urun" EntityType="Self.urun" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_siparis_hasta" Association="Self.FK_siparis_hasta">
+      <End Role="hasta" EntitySet="hasta" />
+      <End Role="siparis" EntitySet="siparis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_siparis_urun" Association="Self.FK_siparis_urun">
+      <End Role="urun" EntitySet="urun" />
+      <End Role="siparis" EntitySet="siparis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_urun_hasta" Association="Self.FK_urun_hasta">
+      <End Role="hasta" EntitySet="hasta" />
+      <End Role="urun" EntitySet="urun" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

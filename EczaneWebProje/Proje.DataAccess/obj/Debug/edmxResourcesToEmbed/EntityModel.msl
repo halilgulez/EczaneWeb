@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebProgramlamaModelStoreContainer" CdmEntityContainer="WebProgramlamaEntities">
+    <EntitySetMapping Name="hasta">
+      <EntityTypeMapping TypeName="WebProgramlamaModel.hasta">
+        <MappingFragment StoreEntitySet="hasta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="hastaNo" ColumnName="hastaNo" />
+          <ScalarProperty Name="hastaKimlikno" ColumnName="hastaKimlikno" />
+          <ScalarProperty Name="hastaAd" ColumnName="hastaAd" />
+          <ScalarProperty Name="hastaSoyad" ColumnName="hastaSoyad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="siparis">
+      <EntityTypeMapping TypeName="WebProgramlamaModel.siparis">
+        <MappingFragment StoreEntitySet="siparis">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="siparisNo" ColumnName="siparisNo" />
+          <ScalarProperty Name="siparisTarihi" ColumnName="siparisTarihi" />
+          <ScalarProperty Name="toplamTutar" ColumnName="toplamTutar" />
+          <ScalarProperty Name="hastaid" ColumnName="hastaid" />
+          <ScalarProperty Name="urunid" ColumnName="urunid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="urun">
+      <EntityTypeMapping TypeName="WebProgramlamaModel.urun">
+        <MappingFragment StoreEntitySet="urun">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="urunKodu" ColumnName="urunKodu" />
+          <ScalarProperty Name="urunadi" ColumnName="urunadi" />
+          <ScalarProperty Name="stokMiktari" ColumnName="stokMiktari" />
+          <ScalarProperty Name="birimFiyat" ColumnName="birimFiyat" />
+          <ScalarProperty Name="hastaid" ColumnName="hastaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
