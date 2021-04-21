@@ -53,6 +53,15 @@
             flex-direction:column;
             border:2px solid green;
         }
+        .ajax-Deneme{
+            margin:10px;
+            padding:20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+            border:2px solid green;
+        }
      
     </style>
 </head>
@@ -61,8 +70,18 @@
 
 
         <div class="hastalari-getir">
-            <asp:Button ID="btnHastaGetir" runat="server" Text="Button" OnClick="btnHastaGetir_Click" />
-            <asp:GridView ID="myGrid" runat="server"></asp:GridView>
+            <asp:Button ID="btnHastaGetir" runat="server" Text="Getir" OnClick="btnHastaGetir_Click" />
+            <asp:GridView ID="myGrid" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
+                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                <SortedDescendingHeaderStyle BackColor="#93451F" />
+            </asp:GridView>
         </div>
 
 
@@ -107,13 +126,23 @@
                 <span>Hastanın Yeni İsmi</span>&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="tbtYeniIsim" runat="server"></asp:TextBox>
             </div>
-            <asp:Button ID="btnHastaAdiDegistir" runat="server" Text="Change" OnClick="btnHastaAdiDegistir_Click" />
+            <asp:Button ID="btnHastaAdiDegistir" runat="server" Text="Değiştir" OnClick="btnHastaAdiDegistir_Click" />
         </div>
 
 
-
-       
-
+        <div class="ajax-Deneme">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChilderenAsTriggers="false" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:TextBox ID="tbtYazi" runat="server"></asp:TextBox>
+                    <asp:ListBox ID="lbListe" runat="server" Width="278px"></asp:ListBox>
+                </ContentTemplate>
+                <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="btnYolla" EventName="Click" />
+                </Triggers>
+            </asp:UpdatePanel>
+            <asp:Button ID="btnYolla" runat="server" Text="Yazıyı Yolla" OnClick="Unnamed1_Click" />
+        </div>
 
     </form>
 </body>

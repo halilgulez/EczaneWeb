@@ -48,5 +48,10 @@ namespace WebEczane
             tbtEskiIsim.Text = "";
             tbtYeniIsim.Text = "";
         }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            lbListe.Items.Add(new ListItem(tbtYazi.Text));
+        }
     }
 }
