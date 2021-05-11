@@ -73,8 +73,8 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="left-top">
-						<a class="new-btn-d br-2" href="#"><span>Book Appointment</span></a>
-						<div class="mail-b"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> demo@gmail.com</a></div>
+						<a class="new-btn-d br-2" href="#"><span>Halil Gülez</span></a>
+						<div class="mail-b"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> halilgulez07@outlook.com</a></div>
 					</div>
 				</div>
 				<div class="auto-style2">
@@ -109,8 +109,8 @@
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="#home">Home</a></li>
                         <li><a class="nav-link" href="#about">About Us</a></li>
-                        <li><a class="nav-link" href="#services">Services</a></li>
-						<li><a class="nav-link" href="#appointment">Hasta Panel</a></li>
+                        <li><a class="nav-link" href="#services">Ürün Paneli</a></li>
+						<li><a class="nav-link" href="#appointment">Hasta Paneli</a></li>
                         <li><a class="nav-link" href="#gallery">Gallery</a></li>
 						<li><a class="nav-link" href="#team">Doctor</a></li>
                         <li><a class="nav-link" href="#blog">Blog</a></li>
@@ -205,116 +205,108 @@
 	</div>
 	<!-- End About us -->
 	
-	<!-- Start Services -->
+	<!-- Ürün Panel Start -->
 	<div id="services" class="services-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>Services</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+						<h2>Ürün Ekleme Ve Düzenleme Paneli</h2>
+						<p>Ürün ekleme düzenleme ve silme işlemlerini yapacaktır. </p>
 					</div>
 				</div>
 			</div>
-			
 			<div class="row">
-				<div class="col-lg-12">
-					<div class="owl-carousel owl-theme">
-						<div class="item">
-							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-h-square" aria-hidden="true"></i></div>
-								<h3 class="title">Lorem ipsum dolor</h3>
-								<p class="description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-								</p>
-								<a href="#" class="new-btn-d br-2">Read More</a>
-							</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="well-block">
+						<!-- form start -->
+	<form runat="server">
+						<div class="well-title">
+                            <asp:Button ID="BtnUrunGetir" runat="server" class="nav-link"  Text="Getir" OnClick="BtnUrunGetir_Click" />
+							
+                            <asp:GridView ID="GridUrunler" runat="server" AutoGenerateColumns="False" DataKeyNames="id">
+                                <Columns>
+                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                    <asp:BoundField DataField="urunKodu" HeaderText="urunKodu" SortExpression="urunKodu" />
+                                    <asp:BoundField DataField="urunadi" HeaderText="urunadi" SortExpression="urunadi" />
+                                    <asp:BoundField DataField="stokMiktari" HeaderText="stokMiktari" SortExpression="stokMiktari" />
+                                    <asp:BoundField DataField="birimFiyat" HeaderText="birimFiyat" SortExpression="birimFiyat" />
+                                    <asp:BoundField DataField="hastaid" HeaderText="hastaid" SortExpression="hastaid" />
+                                </Columns>
+                                </asp:GridView>
+							    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:WebProgramlamaConnectionString %>" SelectCommand="SELECT * FROM [urun]"></asp:SqlDataSource>
+								 <br />
+							  <h2>Ürün Ekleme </h2>
 						</div>
-						<div class="item">
-							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-heart" aria-hidden="true"></i></div>
-								<h3 class="title">Lorem ipsum dolor</h3>
-								<p class="description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-								</p>
-								<a href="#" class="new-btn-d br-2">Read More</a>
+								
+			
+						<div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+								         <label class="control-label" for="name">Ürün Kodu:</label>
+                                         <asp:TextBox ID="tbtUrunKodu" runat="server" class="form-control input-md"  placeholder="Ürün Kodu"></asp:TextBox>
+									</div>
+								 </div>
+
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+								       <label class="control-label" for="name">Ürün Adı:&nbsp; </label>&nbsp;
+								       <asp:TextBox ID="tbtUrunAdi" runat="server" class="form-control input-md"  placeholder="Ürün Adı"></asp:TextBox>
+									</div>
+								 </div>
+
+								<div class="col-md-6">
+                                    <div class="form-group">
+								       <label class="control-label" for="time">Stok Miktari:&nbsp; </label>&nbsp;
+								       <asp:TextBox ID="tbtStokMiktari" runat="server" class="form-control input-md"  placeholder="Stok Miktarı"></asp:TextBox>
+								   </div>
+							    </div>
+
+								 <div class="col-md-6">
+                                    <div class="form-group">
+								        <label class="control-label" for="time">Birim Fiyatı:</label>
+								        <asp:TextBox ID="tbtBirimFiyati" runat="server" class="form-control input-md"  placeholder="Birim Fiyatı"></asp:TextBox>
+									</div>
+								 </div>
+							   <div class="col-md-12">
+							      <div class="form-group">
+                                    <asp:Button ID="BtnUrunEkle" runat="server" CssClass="nav-link" Text="Ürünü Ekle" OnClick="BtnUrunEkle_Click"></asp:Button>
+									  
+								  </div>
+								</div>
+						 </div>
+
+							<div class="well-title">
+								
+								<h2>Ürün Kodu Silin</h2>
+                                 <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+								  <label class="control-label" for="time">Silinecek Ürün Koduna Girin:</label>
+								  <asp:TextBox ID="TbtUrunKoduRemove" runat="server" class="form-control input-md"  placeholder="Ürün Kodu"></asp:TextBox>
+									</div>
+								 </div>
+
+								 <div class="col-md-12">
+							      <div class="form-group">
+                                    <asp:Button ID="BtnUrunSil" runat="server" CssClass="nav-link" Text="Silin" OnClick="BtnUrunSil_Click"></asp:Button>
+								  </div>
+								</div>
 							</div>
-						</div>
-						<div class="item">
-							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></div>
-								<h3 class="title">Lorem ipsum dolor</h3>
-								<p class="description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-								</p>
-								<a href="#" class="new-btn-d br-2">Read More</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-stethoscope" aria-hidden="true"></i></div>
-								<h3 class="title">Lorem ipsum dolor</h3>
-								<p class="description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-								</p>
-								<a href="#" class="new-btn-d br-2">Read More</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
-								<h3 class="title">Lorem ipsum dolor</h3>
-								<p class="description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-								</p>
-								<a href="#" class="new-btn-d br-2">Read More</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-plus-square" aria-hidden="true"></i></div>
-								<h3 class="title">Lorem ipsum dolor</h3>
-								<p class="description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-								</p>
-								<a href="#" class="new-btn-d br-2">Read More</a>
-							</div>
-						</div>
-						<div class="item"> 
-							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-medkit" aria-hidden="true"></i></div>
-								<h3 class="title">Lorem ipsum dolor</h3>
-								<p class="description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-								</p>
-								<a href="#" class="new-btn-d br-2">Read More</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-user-md" aria-hidden="true"></i></div>
-								<h3 class="title">Lorem ipsum dolor</h3>
-								<p class="description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-								</p>
-								<a href="#" class="new-btn-d br-2">Read More</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></div>
-								<h3 class="title">Lorem ipsum dolor</h3>
-								<p class="description">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur.
-								</p>
-								<a href="#" class="new-btn-d br-2">Read More</a>
-							</div>
-						</div>
-					</div>
+						 </div>
+							
+							
+
+
+						
+					
 				</div>
-			</div>			
-		</div>
+			</div>
+			
+			
+      	</div>
 	</div>
+
 	<!-- End Services -->
 	
 	<!-- Start Appointment -->
@@ -331,14 +323,21 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6">
 					<div class="well-block">
-						 <!-- Form start -->
-					   <form runat="server">
+						 
+					   
                         <div class="well-title">
-                            <asp:Button ID="BtnHastaGetir" runat="server" Text="GETİR" Height="71px" Width="112px"   class="btn btn-common" OnClick="BtnHastaGetir_Click" />
+                            <asp:Button ID="BtnHastaGetir" runat="server" Text="GETİR" Height="71px" Width="112px"   class="nav-link" OnClick="BtnHastaGetir_Click" />
                             <br />
 						      
-                            <asp:GridView ID="HastaGrid" runat="server" BackColor="White" HorizontalAlign="Center" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" Height="228px" Width="456px">
+                            <asp:GridView ID="HastaGrid" runat="server" BackColor="White" HorizontalAlign="Center" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" Height="228px" Width="456px" AutoGenerateColumns="False" DataKeyNames="id">
                                 <AlternatingRowStyle BackColor="#DCDCDC" />
+                                <Columns>
+                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                                    <asp:BoundField DataField="hastaNo" HeaderText="hastaNo" SortExpression="hastaNo" />
+                                    <asp:BoundField DataField="hastaKimlikno" HeaderText="hastaKimlikno" SortExpression="hastaKimlikno" />
+                                    <asp:BoundField DataField="hastaAd" HeaderText="hastaAd" SortExpression="hastaAd" />
+                                    <asp:BoundField DataField="hastaSoyad" HeaderText="hastaSoyad" SortExpression="hastaSoyad" />
+                                </Columns>
                                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                                 <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
                                 <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
@@ -433,13 +432,11 @@
                             </div>
 
 
-                        </form>
-                        <!-- form end -->
                     </div>
 				</div>
 			</div>
 		</div>
-	</div>
+	
 	<!-- End Appointment -->
 	
 	<!-- Start Gallery -->
@@ -448,103 +445,62 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>Gallery</h2>
+						<h2>Sipariş Paneli</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 					</div>
 				</div>
 			</div>
+            <asp:Button ID="btnSiparisGetir" runat="server" Text="Button" OnClick="btnSiparisGetir_Click" />
+            <asp:GridView ID="GrdSiparis" runat="server" AutoGenerateColumns="False" DataKeyNames="id" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <Columns>
+                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                    <asp:BoundField DataField="siparisNo" HeaderText="siparisNo" SortExpression="siparisNo" />
+                    <asp:BoundField DataField="toplamTutar" HeaderText="toplamTutar" SortExpression="toplamTutar" />
+                    <asp:BoundField DataField="hastaid" HeaderText="hastaid" SortExpression="hastaid" />
+                    <asp:BoundField DataField="urunid" HeaderText="urunid" SortExpression="urunid" />
+                </Columns>
+                <EditRowStyle BackColor="#999999" />
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+            </asp:GridView>
+	
+			<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:WebProgramlamaConnectionString %>" SelectCommand="SELECT * FROM [siparis]"></asp:SqlDataSource>
+			<br />
+			<label class="control-label" for="Eski Ad">Sipariş Numarası:</label>
+            <asp:TextBox ID="tbxSiparisNo" runat="server"></asp:TextBox>
+
+			<br />
+            <br />
+
+			<asp:Button ID="btnSiparisEkle" runat="server" Text="Siparisleri Ekle" OnClick="btnSiparisEkle_Click" />
 			
-			<div class="popup-gallery row clearfix">
-				<div class="col-md-3 col-sm-6">
-					<div class="box-gallery">
-						<img src="images/gallery-01.jpg" alt="">
-						<div class="box-content">	
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<ul class="icon">
-								<li><a href="images/gallery-01.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>								
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="box-gallery">
-						<img src="images/gallery-02.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<ul class="icon">
-								<li><a href="images/gallery-02.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>								
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">					
-					<div class="box-gallery">
-						<img src="images/gallery-03.jpg" alt="">
-						<div class="box-content">							
-							<ul class="icon">
-								<li><a href="images/gallery-03.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>								
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="box-gallery">
-						<img src="images/gallery-04.jpg" alt="">
-						<div class="box-content">	
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<ul class="icon">
-								<li><a href="images/gallery-04.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>								
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="box-gallery">
-						<img src="images/gallery-05.jpg" alt="">
-						<div class="box-content">							
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<ul class="icon">
-								<li><a href="images/gallery-05.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>								
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">					
-					<div class="box-gallery">
-						<img src="images/gallery-06.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<ul class="icon">
-								<li><a href="images/gallery-06.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>								
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="box-gallery">
-						<img src="images/gallery-07.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<ul class="icon">
-								<li><a href="images/gallery-07.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>								
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="box-gallery">
-						<img src="images/gallery-08.jpg" alt="">
-						<div class="box-content">		
-							<h3 class="title">Lorem ipsum dolor</h3>
-							<ul class="icon">
-								<li><a href="images/gallery-08.jpg"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>								
-							</ul>
-						</div>
-					</div>
-				</div>
+			
+
+       <!-- form end -->
+			<br />
+            <br />
+			<label class="control-label" for="Eski Ad">Sipariş Numarası:</label>
+            <asp:TextBox ID="tbxSiparisSil" runat="server"></asp:TextBox>
+
+			<br />
+
+			<asp:Button ID="btnSiparisSil" runat="server" Text="Siparislerin Numarasına Göre Sil" OnClick="btnSiparisSil_Click" Width="281px" />
+			
+			
+
+			<br />
+            <br />
 			</div>
-		</div>
 	</div>
+</form>
 	<!-- End Gallery -->
 	
 	<!-- Start Team -->
