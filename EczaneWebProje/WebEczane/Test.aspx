@@ -131,6 +131,7 @@
 
 
         <div>
+            <h2>Ajax Metodları </h2>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChilderenAsTriggers="false" UpdateMode="Conditional">
                 <ContentTemplate>

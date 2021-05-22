@@ -222,6 +222,15 @@ namespace WebEczane
         protected global::System.Web.UI.WebControls.Button btnchangead;
 
         /// <summary>
+        /// BtnYonlendir denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnYonlendir;
+
+        /// <summary>
         /// btnSiparisGetir denetimi.
         /// </summary>
         /// <remarks>

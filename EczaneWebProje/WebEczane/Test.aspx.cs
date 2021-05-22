@@ -11,7 +11,10 @@ namespace WebEczane
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (RouteData.Values["Id"] != null)
+            {
+                var Id = RouteData.Values["Id"];
+            }
         }
 
         protected void btnHastaGetir_Click(object sender, EventArgs e)

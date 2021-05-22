@@ -54,6 +54,19 @@
             padding-left: 15px;
             padding-right: 15px;
         }
+        .auto-style3 {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+            left: 0px;
+            top: 0px;
+            height: 26px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     </style>
 
 </head>
@@ -108,13 +121,14 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="#home">Home</a></li>
-                        <li><a class="nav-link" href="#about">About Us</a></li>
+                        <li><a class="nav-link" href="#about">Hakkında</a></li>
                         <li><a class="nav-link" href="#services">Ürün Paneli</a></li>
-						<li><a class="nav-link" href="#appointment">Hasta Paneli</a></li>
-                        <li><a class="nav-link" href="#gallery">Gallery</a></li>
+						<li><a class="nav-link" href="#appointment">Hasta Panel</a></li>
+                        <li><a class="nav-link" href="#gallery">Sipariş</a></li>
 						<li><a class="nav-link" href="#team">Doctor</a></li>
                         <li><a class="nav-link" href="#blog">Blog</a></li>
 						<li><a class="nav-link" href="#contact">Contact</a></li>
+						<li><a class="nav-link" href="test.aspx">Test</a></li>
                     </ul>
                 </div>
             </div>
@@ -294,12 +308,6 @@
 								</div>
 							</div>
 						 </div>
-							
-							
-
-
-						
-					
 				</div>
 			</div>
 			
@@ -309,7 +317,7 @@
 
 	<!-- End Services -->
 	
-	<!-- Start Appointment -->
+	<!-- Start Hasta -->
 	<div id="appointment" class="appointment-main">
 		<div class="container">
 			<div class="row">
@@ -434,23 +442,29 @@
 
                     </div>
 				</div>
+			<asp:Button ID="BtnYonlendir" runat="server" Text="Yönlendirme" OnClick="BtnYonlendir_Click" />
 			</div>
 		</div>
 	
-	<!-- End Appointment -->
+	<!-- End Hasta -->
 	
 	<!-- Start Gallery -->
 	<div id="gallery" class="gallery-box">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>Sipariş Paneli</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+						<h2>Sipariş Ekleme Ve Düzenleme Paneli</h2>
+						<p>Siparişi ekleme düzenleme ve silme işlemlerini yapılacaktır. </p>
 					</div>
 				</div>
 			</div>
-            <asp:Button ID="btnSiparisGetir" runat="server" Text="Button" OnClick="btnSiparisGetir_Click" />
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<div class="well-block">
+                        <div class="well-title">
+            <asp:Button ID="btnSiparisGetir" runat="server" CssClass="nav-link" Text="Getir" OnClick="btnSiparisGetir_Click" />
+							<br/>
             <asp:GridView ID="GrdSiparis" runat="server" AutoGenerateColumns="False" DataKeyNames="id" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
@@ -471,36 +485,52 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-	
 			<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:WebProgramlamaConnectionString %>" SelectCommand="SELECT * FROM [siparis]"></asp:SqlDataSource>
 			<br />
+			<br/>
+			<h2> Sipariş Ekleme </h2>
+		  </div>
+	   
+			
+		<div class="row">
+          <div class="col-md-6">
+             <div class="form-group">
 			<label class="control-label" for="Eski Ad">Sipariş Numarası:</label>
-            <asp:TextBox ID="tbxSiparisNo" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbxSiparisNo" runat="server" class="form-control input-md"  placeholder="Sipariş Numarası"></asp:TextBox>
+				 </div>
+			  </div>
 
-			<br />
-            <br />
+		 <div class="auto-style3">
+             <div class="form-group">
+			<asp:Button ID="btnSiparisEkle" runat="server" CssClass="nav-link" Text="Siparisleri Ekle" OnClick="btnSiparisEkle_Click" />
+			 </div>
+		 </div>
+		</div>
 
-			<asp:Button ID="btnSiparisEkle" runat="server" Text="Siparisleri Ekle" OnClick="btnSiparisEkle_Click" />
-			
-			
-
-       <!-- form end -->
-			<br />
-            <br />
+<br />
+<br />
+  <div class="well-title">
+		<h2>Sipariş Silme </h2>	
+		 
+	<div class="row">
+		 <div class="col-md-6">
+             <div class="form-group">
 			<label class="control-label" for="Eski Ad">Sipariş Numarası:</label>
-            <asp:TextBox ID="tbxSiparisSil" runat="server"></asp:TextBox>
-
-			<br />
-
-			<asp:Button ID="btnSiparisSil" runat="server" Text="Siparislerin Numarasına Göre Sil" OnClick="btnSiparisSil_Click" Width="281px" />
+            <asp:TextBox ID="tbxSiparisSil" runat="server" class="form-control input-md"  placeholder="Sipariş Numarası"></asp:TextBox>
+		     </div>
+		</div>
 			
-			
-
-			<br />
-            <br />
-			</div>
+		<div class="col-md-12">
+             <div class="form-group">
+			<asp:Button ID="btnSiparisSil" runat="server" CssClass="nav-link" Text="Siparislerin Numarasına Göre Sil" OnClick="btnSiparisSil_Click" Width="281px" />
+		 </div>
+		</div>
 	</div>
+ </div>
+</div>
+</div>
 </form>
+	<!-- form end -->
 	<!-- End Gallery -->
 	
 	<!-- Start Team -->

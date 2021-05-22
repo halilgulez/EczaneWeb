@@ -104,5 +104,10 @@ namespace WebEczane
             Proje.Business.SiparisSinif.SiparisSil(tbxSiparisSil.Text);
             tbtHastaSilAd.Text = "";
         }
+
+        protected void BtnYonlendir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Test.aspx/" + tbtHastaNo.Text + "/");
+        }
     }
 }
