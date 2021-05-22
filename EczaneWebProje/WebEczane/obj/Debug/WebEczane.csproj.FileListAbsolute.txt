@@ -128,3 +128,5 @@ D:\EczaneWeb\EczaneWebProje\WebEczane\bin\Proje.Business.dll.config
 D:\EczaneWeb\EczaneWebProje\WebEczane\bin\Proje.DataAccess.dll.config
 D:\EczaneWeb\EczaneWebProje\WebEczane\bin\EntityFramework.xml
 D:\EczaneWeb\EczaneWebProje\WebEczane\bin\EntityFramework.SqlServer.xml
+D:\EczaneWeb\EczaneWebProje\WebEczane\bin\Newtonsoft.Json.dll
+D:\EczaneWeb\EczaneWebProje\WebEczane\bin\Newtonsoft.Json.xml

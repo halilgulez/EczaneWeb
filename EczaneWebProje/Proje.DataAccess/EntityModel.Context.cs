@@ -28,5 +28,7 @@ namespace Proje.DataAccess
         public virtual DbSet<hasta> hasta { get; set; }
         public virtual DbSet<siparis> siparis { get; set; }
         public virtual DbSet<urun> urun { get; set; }
+
+       
     }
 }
