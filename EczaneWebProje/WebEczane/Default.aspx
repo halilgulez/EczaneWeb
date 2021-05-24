@@ -86,8 +86,8 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="left-top">
-						<a class="new-btn-d br-2" href="#"><span>Halil Gülez</span></a>
-						<div class="mail-b"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> halilgulez07@outlook.com</a></div>
+						<a class="new-btn-d br-2" href="#">YÖNETİCİLER</a>
+						<div class="mail-b"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> ADMİN PANEL</a></div>
 					</div>
 				</div>
 				<div class="auto-style2">
@@ -124,7 +124,7 @@
                         <li><a class="nav-link" href="#about">Hakkında</a></li>
                         <li><a class="nav-link" href="#services">Ürün Paneli</a></li>
 						<li><a class="nav-link" href="#appointment">Hasta Panel</a></li>
-                        <li><a class="nav-link" href="#gallery">Sipariş</a></li>
+                        <li><a class="nav-link" href="#gallery">Sipariş Panel</a></li>
 						<li><a class="nav-link" href="#team">Doctor</a></li>
                         <li><a class="nav-link" href="#blog">Blog</a></li>
 						<li><a class="nav-link" href="#contact">Contact</a></li>
