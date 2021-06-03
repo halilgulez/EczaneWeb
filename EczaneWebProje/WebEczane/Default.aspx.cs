@@ -14,7 +14,8 @@ namespace WebEczane
      
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
+            lblKullanici.Text = Session["kullaniciAdi"].ToString();
         }
         //Ürün Kısmı Başlangıç
         protected void BtnUrunGetir_Click(object sender, EventArgs e)

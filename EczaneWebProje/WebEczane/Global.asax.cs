@@ -13,6 +13,7 @@ namespace WebEczane
         void Yonlendir(RouteCollection route)
         {
             route.MapPageRoute("Deneme", "Hasta/{Id}", "~/Test.aspx");
+            route.MapPageRoute("AdminGirisPaneli","AdminGirisPaneli","~/Admin Panel/AdminGirisPaneli.aspx");
         }
 
         protected void Application_Start(object sender, EventArgs e)

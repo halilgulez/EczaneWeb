@@ -44,7 +44,7 @@ namespace WebEczane.WebServis
         }
 
 
-        //XLM döndürme
+        //XML döndürme
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public void getAllEzcanexml()

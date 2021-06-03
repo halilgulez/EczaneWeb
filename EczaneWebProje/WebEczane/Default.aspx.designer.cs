@@ -15,6 +15,15 @@ namespace WebEczane
     {
 
         /// <summary>
+        /// lblKullanici denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblKullanici;
+
+        /// <summary>
         /// BtnUrunGetir denetimi.
         /// </summary>
         /// <remarks>

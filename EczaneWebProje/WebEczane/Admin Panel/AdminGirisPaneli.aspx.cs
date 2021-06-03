@@ -28,9 +28,8 @@ namespace WebEczane.Admin_Panel
                   da.Fill(dt);
                  if (dt.Rows.Count != 0)
                  {
-                      lblUyari.Text = "Giriş Başarılı";
-                      Response.Redirect("https://localhost:44375/Default.aspx");
-
+                Session["kullaniciAdi"] = tbxKullaniciAdi.Text;
+                Response.Redirect("~/Default.aspx");
             }
                  else
                  {

@@ -27,8 +27,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
-		      	<h3 class="mb-4 text-center">Admin Giriş Hesabı	 
-				</h3>
+		      	<h3 class="mb-4 text-center">Admin Giriş Hesabı	 </h3>
                         <h3 class="mb-4 text-center">	 
 				<asp:Label ID="lblUyari" runat="server" Text=""></asp:Label>
 			   </h3>
@@ -45,7 +44,8 @@
 	            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
-									<a href="https://localhost:44375/Kullan%C4%B1c%C4%B1Default.aspx">Kullanıcı Paneli Tedarik Sistemi</a>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="../KullanıcıDefault.aspx" Target="_new">Kullanıcı Paneli Tedarik Sistemi</asp:HyperLink>
+									<%--<a href="https://localhost:44375/Kullan%C4%B1c%C4%B1Default.aspx">Kullanıcı Paneli Tedarik Sistemi</a>--%>
 								</div>
 					           
 								<div class="w-50 text-md-right">

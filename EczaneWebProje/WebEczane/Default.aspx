@@ -86,7 +86,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="left-top">
-						<a class="new-btn-d br-2" href="#">YÖNETİCİLER</a>
+						<a class="new-btn-d br-2" href="#"> <asp:Label ID="lblKullanici" runat="server" Text="Label"></asp:Label> </a>
 						<div class="mail-b"><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> ADMİN PANEL</a></div>
 					</div>
 				</div>
@@ -112,7 +112,8 @@
 	<header class="top-header">
 		<nav class="navbar header-nav navbar-expand-lg">
             <div class="container">
-				<a class="navbar-brand" href="Default.aspx" style="padding: 30px"><img src="images/logo.png" alt="image" class="auto-style1"></a>
+				<a class="navbar-brand" href="Default.aspx">
+					<img src="<%=ResolveUrl("~/images/logo.png")%>"  class="auto-style1"/></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
 					<span></span>
 					<span></span>

@@ -10,6 +10,36 @@
     <Property Name="hastaAd" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="hastaSoyad" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebProgramlama.dbo.Kullanici' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Yas" Type="nvarchar" MaxLength="2" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="KullaniciSifre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WebProgramlama.dbo.mail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mail">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="MailAdi" />
+      <PropertyRef Name="MailSoyadi" />
+      <PropertyRef Name="MailTelNo" />
+      <PropertyRef Name="MailNot" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MailAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MailSoyadi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MailTelNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MailNot" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
   <EntityType Name="siparis">
     <Key>
       <PropertyRef Name="id" />
@@ -20,6 +50,16 @@
     <Property Name="toplamTutar" Type="float" Nullable="false" />
     <Property Name="hastaid" Type="int" Nullable="false" />
     <Property Name="urunid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="urun">
     <Key>
@@ -71,7 +111,28 @@
   <EntityContainer Name="WebProgramlamaModelStoreContainer">
     <EntitySet Name="hasta" EntityType="Self.hasta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="siparis" EntityType="Self.siparis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="urun" EntityType="Self.urun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Kullanici].[KullaniciID] AS [KullaniciID], 
+    [Kullanici].[Adi] AS [Adi], 
+    [Kullanici].[Soyadi] AS [Soyadi], 
+    [Kullanici].[Yas] AS [Yas], 
+    [Kullanici].[Email] AS [Email], 
+    [Kullanici].[KullaniciAdi] AS [KullaniciAdi], 
+    [Kullanici].[KullaniciSifre] AS [KullaniciSifre]
+    FROM [dbo].[Kullanici] AS [Kullanici]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="mail" EntityType="Self.mail" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mail].[id] AS [id], 
+    [mail].[MailAdi] AS [MailAdi], 
+    [mail].[MailSoyadi] AS [MailSoyadi], 
+    [mail].[MailTelNo] AS [MailTelNo], 
+    [mail].[MailNot] AS [MailNot]
+    FROM [dbo].[mail] AS [mail]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_siparis_hasta" Association="Self.FK_siparis_hasta">
       <End Role="hasta" EntitySet="hasta" />
       <End Role="siparis" EntitySet="siparis" />
